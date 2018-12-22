@@ -31,6 +31,21 @@
         />
 
 
+    <EditText
+        android:id="@+id/contentEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="문자내용을 입력하세요"/>
+
+    <Button
+        android:id="@+id/smsBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SMS 발송"
+
+        />
+
+
 
 
 </LinearLayout>

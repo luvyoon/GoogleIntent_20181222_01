@@ -14,6 +14,8 @@ public class MainActivity extends BaseActivity{
     EditText phoneNumEdt;
     Button dialBtn;
     Button callBtn;
+    Button contentEdt;
+    Button smsEdt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,22 @@ public class MainActivity extends BaseActivity{
 
     @Override
     public void setupEvents() {
+
+        smsEdt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String inputNumber = phoneNumEdt.getText().toString();
+                String inputContent = contentEdt.getText().toString();
+
+                Uri uri = Uri.parse(String.format("smsto:%s",inputNumber));
+                Intent intent = new Intent(Intent.ACTION_SENDTO,uri);
+                intent.putExtra("sms_body",inputContent);
+                startActivity(intent);
+
+
+            }
+        });
 
         callBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +88,8 @@ public class MainActivity extends BaseActivity{
         phoneNumEdt = findViewById(R.id.phoneNumEdt);
         dialBtn = findViewById(R.id.dialBtn);
         callBtn =findViewById(R.id.callBtn);
+        contentEdt =findViewById(R.id.contentEdt);
+        smsEdt = findViewById(R.id.smsBtn);
 
     }
 }

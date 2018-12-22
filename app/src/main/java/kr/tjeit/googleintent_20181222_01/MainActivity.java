@@ -19,6 +19,7 @@ public class MainActivity extends BaseActivity{
     Button contentEdt;
     Button smsEdt;
     Button kakakoMarketLinkBtn;
+    Button naverWeblinkBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,18 @@ public class MainActivity extends BaseActivity{
 
     @Override
     public void setupEvents() {
+
+        naverWeblinkBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String naverUrl= "http://www.naver.com";
+                Uri uri = Uri.parse(naverUrl);
+                Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+                startActivity(intent);
+
+
+            }
+        });
 
         kakakoMarketLinkBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,6 +118,7 @@ public class MainActivity extends BaseActivity{
         contentEdt =findViewById(R.id.contentEdt);
         smsEdt = findViewById(R.id.smsBtn);
         kakakoMarketLinkBtn = findViewById(R.id.kakakoMarketLinkBtn);
+        naverWeblinkBtn = findViewById(R.id.naverWeblinkBtn);
 
     }
 }

@@ -16,7 +16,7 @@ public class MainActivity extends BaseActivity{
     EditText phoneNumEdt;
     Button dialBtn;
     Button callBtn;
-    Button contentEdt;
+    EditText contentEdt;
     Button smsEdt;
     Button kakakoMarketLinkBtn;
     Button naverWeblinkBtn;

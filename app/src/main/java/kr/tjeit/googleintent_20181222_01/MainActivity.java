@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.net.URI;
+
 public class MainActivity extends BaseActivity{
 
 
@@ -16,6 +18,7 @@ public class MainActivity extends BaseActivity{
     Button callBtn;
     Button contentEdt;
     Button smsEdt;
+    Button kakakoMarketLinkBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,17 @@ public class MainActivity extends BaseActivity{
 
     @Override
     public void setupEvents() {
+
+        kakakoMarketLinkBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String kakaoLinkUrl = "com.kakao.talk&hl=ko";
+                Uri uri = Uri.parse(String.format("market: //details?id=%s",kakaoLinkUrl));
+                Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+                startActivity(intent);
+
+            }
+        });
 
         smsEdt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,6 +104,7 @@ public class MainActivity extends BaseActivity{
         callBtn =findViewById(R.id.callBtn);
         contentEdt =findViewById(R.id.contentEdt);
         smsEdt = findViewById(R.id.smsBtn);
+        kakakoMarketLinkBtn = findViewById(R.id.kakakoMarketLinkBtn);
 
     }
 }

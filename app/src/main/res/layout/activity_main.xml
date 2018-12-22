@@ -45,6 +45,13 @@
 
         />
 
+    <Button
+        android:id="@+id/kakakoMarketLinkBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="카카오톡 다운로드"
+        />
+
 
 
 

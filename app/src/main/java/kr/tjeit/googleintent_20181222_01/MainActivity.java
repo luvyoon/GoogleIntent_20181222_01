@@ -20,6 +20,7 @@ public class MainActivity extends BaseActivity{
     Button smsEdt;
     Button kakakoMarketLinkBtn;
     Button naverWeblinkBtn;
+    Button tjeitMapBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,18 @@ public class MainActivity extends BaseActivity{
 
     @Override
     public void setupEvents() {
+
+        tjeitMapBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                위도와 경도값 삽입.
+
+                Uri uri= Uri.parse("geo:37.561800, 126.025115");
+                Intent intent = new Intent (Intent.ACTION_VIEW,uri);
+                startActivity(intent);
+
+            }
+        });
 
         naverWeblinkBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,6 +132,7 @@ public class MainActivity extends BaseActivity{
         smsEdt = findViewById(R.id.smsBtn);
         kakakoMarketLinkBtn = findViewById(R.id.kakakoMarketLinkBtn);
         naverWeblinkBtn = findViewById(R.id.naverWeblinkBtn);
+        tjeitMapBtn = findViewById(R.id.tjeitMapBtn);
 
     }
 }
